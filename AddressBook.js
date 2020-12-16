@@ -11,57 +11,84 @@ class AddessBook{
     
     //firstname
     get(){
-        return this.firstname;
+        return this._firstname;
     }
-    set(firstName){
-        this._firstName=firstName;
+    set(firstname){
+        let regX = RegExp("^[A-Z]{1}[a-z]{2,}");
+        if(regX.test(firstname));{
+            this._firstName=firstName;
+        }
     }
-     //lastname
+    
+    //lastname
     get(){
-        return this.lastname;
+        return this._lastname;
     }
     set(lastname){
-        this._lastname=lastname;
-    }
+        let regX = RegExp("^[A-Z]{1}[a-z]{2,}");
+        if(regX.test(lastname)){
+            this._lastname=lastname;
+        }
+    } 
+    
     //city
     get(){
-        return this.city;
+        return this._city;
     }
     set(city){
-        this._city=city;
+        let regX = RegExp("^[A-Z]{1}[a-z]{2,}");
+        if(regX.test(city)){
+            this._city=city;
+        }  
     }
+    
     //state
     get(){
-        return this.state;
+        return this._state;
     }
-    set(city){
-        this._state=state;
+    set(state){
+        let regX = RegExp("^[A-Z]{1}[a-z]{2,}");
+        if(regX.test(state)){
+            this._state=state;
+        }
     }
+    
+    
     //pincode
     get(){
-        return this.pincode;
+        return this._pincode;
     }
-    set(city){
-        this._pincode=picode;
+    set(pincode){
+        let regX = RegExp("^[0-9]{6}$")
+        if(regX.test(pincode)){
+        this._pincode=pincode}
     }
+    
     //phone number
     get(){
-        return this.phonenNumber;
+        return this._phonenNumber;
     }
-    set(city){
-        this._phonenNumber=phonenNumber;
+    set(phonenNumber){
+        let regX = RegExp("^[6-9]{1}[0-9{9}$");
+        if(regX.test(phonenNumber)){
+            this._phonenNumber=phonenNumber;
+        }
     }
+    
     //email
     get(){
-        return this.email;
+        return this._email;
     }
-    set(city){
-        this._email=email;
+    set(email){
+        let regX = RegExp("^[a-zA-Z0-9]?[.?!#$&]*[A-za-z0-9][@][a-z]{6}[.][a-z]{2,}[.]*[a-z]*$");
+        if(regX.test(email)){
+            this._email=email;
+        }
     }
     
     toString(){
         return "First Name="+this.firstname+", last name="+this.lastname+" city="+this.city+", state="+this.state+", pincode="+this.pincode+", phone Number="+this.phoneNumber+", email="+this.email;
     }
 }
-let book = new AddessBook("Praveen","Sakinala","Hyderabad","Telangana",420483,1234567890,"praveen@gmail.com");
+let book = new AddessBook("Praveen","Sakinala","Hyderabad","Telangana",420483,9191919191,"praveen@gmail.com");
 console.log(book.toString());
