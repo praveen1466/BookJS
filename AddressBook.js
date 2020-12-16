@@ -68,10 +68,10 @@ class AddessBook{
     get(){
         return this._phonenNumber;
     }
-    set(phonenNumber){
+    set(phoneNumber){
         let regX = RegExp("^[6-9]{1}[0-9{9}$");
-        if(regX.test(phonenNumber)){
-            this._phonenNumber=phonenNumber;
+        if(regX.test(phoneNumber)){
+            this._phoneNumber=phoneNumber;
         }
     }
     
@@ -90,5 +90,16 @@ class AddessBook{
         return "First Name="+this.firstname+", last name="+this.lastname+" city="+this.city+", state="+this.state+", pincode="+this.pincode+", phone Number="+this.phoneNumber+", email="+this.email;
     }
 }
-let book = new AddessBook("Praveen","Sakinala","Hyderabad","Telangana",420483,9191919191,"praveen@gmail.com");
-console.log(book.toString());
+
+let readInput = require("readline-sync");
+let firstname = readInput.question("Enter firstname: \n");
+let lastname = readInput.question("Enter lastname: \n");
+let city = readInput.question("Enter city: \n");
+let state = readInput.question("Enter state: \n");
+let pincode = readInput.question("Enter pincode: \n");
+let phoneNumber = readInput.question("Enter phone number: \n");
+let email = readInput.question("Enter email: \n");
+
+let addressBookArray = new Array();
+addressBookArray.push(new AddessBook(firstname,lastname,city,state,pincode,phoneNumber,email));
+console.log("Address Book details: "+addressBookArray);
