@@ -93,8 +93,8 @@ class AddessBook{
 
 //UC3
 let addressBookArray = new Array();
-addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
-addressBookArray.push(new AddessBook("raju","sakinala","hyderbad","telangana",508011,8181818182,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","ap",508011,8181818181,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("raju","sakinala","hyderbad","tamilnadu",508011,8181818182,"praveen@gmail.com"));
 addressBookArray.push(new AddessBook("rajesh","sakinala","hyderbad","telangana",508011,8181818183,"praveen@gmail.com"));
 console.log("Address Book details: "+addressBookArray.toString());
 
@@ -131,3 +131,14 @@ if (duplicateCheck==0){
 else{ 
     console.log("Duplicate contact");
 }
+
+//UC8
+let searchPerson = addressBookArray.findIndex(search => search.city=="hyderabad");
+let firstPerson = addressBookArray[searchPerson].firstname;
+let LastPerson = addressBookArray[searchPerson].lastname;
+console.log("First name: ",firstPerson," last name: ",LastPerson);
+
+//UC9
+console.log("\n view persons by city or state: ");
+let viewPerson=addressBookArray.filter((book)=>book.state=="telangana").reduce((total,book)=>book.firstname+" "+book.lastname,0);
+console.log(viewPerson);
