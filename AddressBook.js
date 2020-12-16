@@ -91,14 +91,26 @@ class AddessBook{
     }
 }
 
+//UC2
+let addressBookArray = new AddessBook("raju","sakinala","hyderbad","telangana",508011,8181818180,"praveen@gmail.com");
+console.log(addressBookArray.toString());
 
+//UC3
 let addressBookArray = new Array();
 addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
-addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
-addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("naveen","sakinala","hyderbad","telangana",508011,8181818182,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("rajesh","sakinala","hyderbad","telangana",508011,8181818183,"praveen@gmail.com"));
 console.log("Address Book details: "+addressBookArray.toString());
 
-let index = addressBookArray.findIndex(phone => phone.phoneNumber == 1234567890);
-console.log(index);
-addressBookArray[index].phoneNumber=9191919191;
+
+//UC4
+console.log("\nFinding existing contact number: ");
+let indexNum = addressBookArray.findIndex(phone => phone.phoneNumber == 8181818183);
+addressBookArray[indexNum].phoneNumber=9191919191;
+console.log(addressBookArray.toString());
+
+//UC5
+console.log("\nFinding person contact: ");
+let nameindex = addressBookArray.findIndex(name => name.firstName=="naveen");
+addressBookArray.splice(nameindex,nameindex);
 console.log(addressBookArray.toString());
