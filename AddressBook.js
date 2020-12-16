@@ -94,7 +94,7 @@ class AddessBook{
 //UC3
 let addressBookArray = new Array();
 addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
-addressBookArray.push(new AddessBook("naveen","sakinala","hyderbad","telangana",508011,8181818182,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("raju","sakinala","hyderbad","telangana",508011,8181818182,"praveen@gmail.com"));
 addressBookArray.push(new AddessBook("rajesh","sakinala","hyderbad","telangana",508011,8181818183,"praveen@gmail.com"));
 console.log("Address Book details: "+addressBookArray.toString());
 
@@ -112,5 +112,22 @@ addressBookArray.splice(nameindex,nameindex);
 console.log(addressBookArray.toString());
 
 //UC6
+console.log("\nTotal Contacts: ");
 let totalContacts = addressBookArray.length;
 console.log("Total Contacts: ", totalContacts);
+
+//UC7
+console.log("\nChecking Duplicate Name: ");
+let duplicateCheck = 0
+function duplicate(countNum) {
+    if (countNum.firstName == "praveen")
+    duplicateCheck++;
+    return duplicateCheck;
+}
+addressBookArray.forEach((contact)=>duplicate(contact));
+if (duplicateCheck==0){
+    console.log("No Duplicate contacts available ");
+}
+else{ 
+    console.log("Duplicate contact");
+}
