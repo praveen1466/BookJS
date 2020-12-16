@@ -107,7 +107,7 @@ console.log(addressBookArray.toString());
 
 //UC5
 console.log("\nFinding person contact: ");
-let nameindex = addressBookArray.findIndex(name => name.firstName=="naveen");
+let nameindex = addressBookArray.findIndex(name => name.firstname=="naveen");
 addressBookArray.splice(nameindex,nameindex);
 console.log(addressBookArray.toString());
 
@@ -120,7 +120,7 @@ console.log("Total Contacts: ", totalContacts);
 console.log("\nChecking Duplicate Name: ");
 let duplicateCheck = 0
 function duplicate(countNum) {
-    if (countNum.firstName == "praveen")
+    if (countNum.firstname == "praveen")
     duplicateCheck++;
     return duplicateCheck;
 }
@@ -146,3 +146,11 @@ console.log(viewPerson);
 //UC10
 let totalState = addressBookArray.filter((book) => book.state=="tamilnadu").length;
 console.log("No of times available: ",totalState);
+
+
+//UC11
+console.log("\n Sorting Entries");
+for(let book in addressBookArray){
+    addressBookArray.sort(book.firstname);
+}
+addressBookArray.forEach((count)=>console.log(count.toString()));
