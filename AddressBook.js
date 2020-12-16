@@ -5,7 +5,7 @@ class AddessBook{
         this.city=param[2];
         this.state=param[3];
         this.pincode=param[4];
-        this.phonenNumber=param[5];
+        this.phoneNumber=param[5];
         this.email=param[6];
     }
     
@@ -91,15 +91,14 @@ class AddessBook{
     }
 }
 
-let readInput = require("readline-sync");
-let firstname = readInput.question("Enter firstname: \n");
-let lastname = readInput.question("Enter lastname: \n");
-let city = readInput.question("Enter city: \n");
-let state = readInput.question("Enter state: \n");
-let pincode = readInput.question("Enter pincode: \n");
-let phoneNumber = readInput.question("Enter phone number: \n");
-let email = readInput.question("Enter email: \n");
 
 let addressBookArray = new Array();
-addressBookArray.push(new AddessBook(firstname,lastname,city,state,pincode,phoneNumber,email));
-console.log("Address Book details: "+addressBookArray);
+addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
+addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
+console.log("Address Book details: "+addressBookArray.toString());
+
+let index = addressBookArray.findIndex(phone => phone.phoneNumber == 1234567890);
+console.log(index);
+addressBookArray[index].phoneNumber=9191919191;
+console.log(addressBookArray.toString());
