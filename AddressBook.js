@@ -91,10 +91,6 @@ class AddessBook{
     }
 }
 
-//UC2
-let addressBookArray = new AddessBook("raju","sakinala","hyderbad","telangana",508011,8181818180,"praveen@gmail.com");
-console.log(addressBookArray.toString());
-
 //UC3
 let addressBookArray = new Array();
 addressBookArray.push(new AddessBook("praveen","sakinala","hyderbad","telangana",508011,8181818181,"praveen@gmail.com"));
@@ -114,3 +110,7 @@ console.log("\nFinding person contact: ");
 let nameindex = addressBookArray.findIndex(name => name.firstName=="naveen");
 addressBookArray.splice(nameindex,nameindex);
 console.log(addressBookArray.toString());
+
+//UC6
+let totalContacts = addressBookArray.length;
+console.log("Total Contacts: ", totalContacts);
