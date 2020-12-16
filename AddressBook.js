@@ -134,11 +134,15 @@ else{
 
 //UC8
 let searchPerson = addressBookArray.findIndex(search => search.city=="hyderabad");
-let firstPerson = addressBookArray[searchPerson].firstname;
-let LastPerson = addressBookArray[searchPerson].lastname;
+let firstPerson = addressBookArray[searchPerson];
+let LastPerson = addressBookArray[searchPerson];
 console.log("First name: ",firstPerson," last name: ",LastPerson);
 
 //UC9
 console.log("\n view persons by city or state: ");
 let viewPerson=addressBookArray.filter((book)=>book.state=="telangana").reduce((total,book)=>book.firstname+" "+book.lastname,0);
 console.log(viewPerson);
+
+//UC10
+let totalState = addressBookArray.filter((book) => book.state=="tamilnadu").length;
+console.log("No of times available: ",totalState);
